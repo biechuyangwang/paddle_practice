@@ -67,6 +67,12 @@ model = paddle.Model(MyModel(), inputs, labels)
 optim = paddle.optimizer.Adam(learning_rate=0.001, parameters=model.parameters())
 
 # 恢复训练使用
+# params_dict = paddle.load('./checkpoint/mnist_epoch0.pdparams')
+# opt_dict = paddle.load('./checkpoint/mnist_epoch0.pdopt')
+
+# 加载参数到模型
+# model.set_state_dict(params_dict)
+# optim.set_state_dict(opt_dict)
 # model.load("./mnist_checkpoint/final")
 
 # 构建模型超参数（优化器，损失，评估准则）
